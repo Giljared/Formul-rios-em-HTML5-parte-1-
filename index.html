@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários em HTML5 (parte 1) - Strong English Gil</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script lang="javascript" src="_javascript/funcoes._js"></script>
+
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTod').value = tot;
+        }
+    </script>
+
+<body>
+
+    <h1>Formulários em HTML5 (parte 1) - Strong English Gil</h1>
+
+    <form method="post" id="fContato" action="mailto:gmat337@gmial.com" oninput="calc_total();">
+
+        <fieldset class="usuario">
+            <legend>Identificação do Usiário</legend>
+            <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30"
+                    placeholder="Nome Completo"></p>
+            <p><label for="cSenha">Senha: </label><input type="password" name="tSenha" id="cSenha" size="8"
+                    maxlength="8" placeholder="8 dígitos"></p>
+            <p>E-mail: <input type="email" name="tMail" id="sMail" size="20" maxlength="40"
+                    placeholder="Digite seu e-mail"></p>
+            <fieldset class="sexo">
+                <legend>Sexo</legend>
+                <input type="radio" name="tSexo" id="cMasc" checked><label for="cMasc">Masculino</label><br>
+                <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label><br>
+            </fieldset>
+            <p>Data de Nascimento: <input type="date" name="tNasc" id="cNasc"></p>
+        </fieldset>
+
+
+        <fieldset class="endereco">
+            <legend>Endereço do Unsuário</legend>
+            <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80"
+                    placeholder="Rua, Av, Travessa, ..."></p>
+            <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" min="0" max="99999"></p>
+            <p><label for="cEst">Estado:</label> <select name="tEst" id="cEst">
+                    <optgroup label="Região Sudeste">
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP" selected>São Paulo</option>
+                        <option value="MG">Minas Gerais</option>
+                    </optgroup>
+                    <optgroup label="Região Sul">
+                        <option value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                    </optgroup>
+                </select></p>
+            <p><label for="cCid">Cidade:</label><input type="text" name="tCid" id="cCid" size="20" maxlength="40"
+                    placeholder="Sua cidade" list="cidades"></p>
+            <datalist id="cidades">
+                <option value="Rio de Janeiro"></option>
+                <option value="Nova iguaçu"></option>
+                <option value="Niterói"></option>
+                <option value="Belford Roxo"></option>
+
+            </datalist>
+
+        </fieldset>
+
+        <fieldset class="mensagem">
+            <legend>Mensagem do Unsuário</legend>
+            <p><label for="cUrg">Grau de urgência:</label>
+                Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Max</p>
+            <p><label for="cMsg">Mensagem:</label>
+                <textarea name="tMsg" id="cMsg" cols="45" rows="10" placeholder="Deixe aqui sua mensagem"></textarea>
+            </p>
+        </fieldset>
+
+        <fieldset class="pedido">
+            <legend>Solicitação de trabalho Home Office</legend>
+            <p><input type="checkbox" name="tPed" id="cPed" checked>
+                <label for="cPed">Solicito a disponibilização de meu Projeto HTML e css</label></p>
+            <p><label for="cCor">cor:</label>
+                <input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+            <p><label for="cQtd">Quantidade:</label>
+                <input type="number" name="tQtd" id="cQtd" min="0" max="20" value="0"></p>
+            <p><label for="cTot">Preço total: R$</label>
+                <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></p>
+        </fieldset>
+        <br><br>
+        <footer>
+
+            <input type="image" name="tEnviar" src="./img/enviar.jpg">
+            <input type="image" name="tReset" src="./img/reset.jpg">
+
+            <input type="submit" value="Enviar">
+            
+        </footer>
+
+
+
+    </form>
+
+
+
+</body>
+
+</html>

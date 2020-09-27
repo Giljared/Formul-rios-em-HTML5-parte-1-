@@ -1,0 +1,11 @@
+
+input[type="image" i] {
+    appearance: initial;
+    
+    cursor: pointer;
+    padding: 0;
+    border: 5px;
+    display: inline;
+}
+
+
